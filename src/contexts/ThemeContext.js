@@ -4,9 +4,8 @@ import useToggleState from '../hooks/useToggleState';
 export const ThemeContext = createContext();
 
 export function ThemeProvider(props) {
-	const [ isDarkmode, toggleTheme ] = useToggleState();
-
-	return <ThemeContext.Provider value={{ isDarkmode, toggleTheme }}>{props.children}</ThemeContext.Provider>;
+	const [ isDarkMode, toggleTheme ] = useToggleState(false);
+	return <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>{props.children}</ThemeContext.Provider>;
 }
 
 //Higher Order Component
